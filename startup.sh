@@ -1,11 +1,8 @@
-#!/bin/bash
-
-# 1. 如果有環境變數需要檢查，可以在這裡寫邏輯
+#!/bin/sh
 echo "Starting OPENCLAW..."
 
-# 2. 執行主程式 (請根據您的主程式名稱修改)
-# 如果是 Go 語言編譯後的二進位檔：
-./openclaw
+# 方案 A：使用 pnpm 啟動 (推薦，會讀取 package.json 的 start 指令)
+pnpm start
 
-# 或者如果是 Python 專案：
-# python3 main.py
+# 方案 B：如果 package.json 沒有定義 start，則直接執行入口檔案
+# node openclaw.mjs
